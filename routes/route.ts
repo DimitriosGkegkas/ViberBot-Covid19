@@ -1,14 +1,39 @@
 export {}
-var TextMessage = require("viber-bot").Message.Text;
-var express = require("express");
-var KeyboardMessage = require('viber-bot').Message.Keyboard;
-var RichMediaMessage = require('viber-bot').Message.RichMedia;
 
+var express = require("express");
+
+const greeting = require("./../controllers/greeting");
+const start = require("./../controllers/start");
 
 
 
 
 module.exports = (message, response) => {
-   response.send(new TextMessage("Ευχαριστώ πολύ για το μήνυμα σου. Σε λίγο θα έχω περισσότερες δυνατότητες και θα μπορώ να απαντήσω κι όλας.") )
-   .catch(err => {console.log(err)})
+   const msg = message.text
+   switch (msg.toLowerCase()) {
+      case "ας ξεκινήσουμε":{
+         start(message, response)
+         break;
+      }
+      case "":{
+         break;
+      }
+      case "":{
+         break;
+      }
+      case "":{
+         break;
+      }
+      case "":{
+         break;
+      }
+      case "":{
+         break;
+      }
+      default:{
+         greeting(message, response)
+         break;
+      }
+   }
+
 }
