@@ -1,0 +1,19 @@
+{
+  "name": "chatbot-viber",
+  "version": "1.0.0",
+  "description": "This is a viber Chatbot, using node.js.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon bot.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^14.14.37",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "typescript": "^4.2.4",
+    "viber-bot": "^1.0.16"
+  }
+}
