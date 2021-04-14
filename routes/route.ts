@@ -3,8 +3,9 @@ export {}
 var express = require("express");
 
 const greeting = require("./../controllers/greeting");
-const start = require("./../controllers/start");
 
+const stats = require("./../controllers/stats");
+const map = require("./../controllers/map-restrictions");
 
 
 
@@ -12,16 +13,18 @@ module.exports = (message, response) => {
    const msg = message.text
    switch (msg.toLowerCase()) {
       case "ας ξεκινήσουμε":{
-         start(message, response)
+         greeting(message, response)
          break;
       }
-      case "":{
+      case "θα ήθελα πληροφορίες":{
+         map(message, response)
          break;
       }
-      case "":{
+      case "ποια είναι η κατάσταση σήμερα":{
+         stats(message, response)
          break;
       }
-      case "":{
+      case "δ":{
          break;
       }
       case "":{
