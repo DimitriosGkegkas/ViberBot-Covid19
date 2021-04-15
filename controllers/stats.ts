@@ -3,7 +3,7 @@ const TextMessage = require("viber-bot").Message.Text;
 const unirest = require("unirest");
 const KeyboardMessage = require('viber-bot').Message.Keyboard;
 const ΜΑΙΝ_KEYBOARD = require('./../views/menu').MAIN_KEYBOARD
-
+const messages = require('./../views/messages');
 
 
 module.exports = (message, response) => {
@@ -37,13 +37,9 @@ module.exports = (message, response) => {
         
         let newCases = res.body.response[0].cases.new ;
         response.send([
-            new TextMessage(
-            "Σήμερα τα κρούσματα έχουν μεταβληθεί κατά "+newCases + 
-            " και αυτή την στιγμή έχουν λάβει τουλάχιστον μία δόση του εμβολίου το " +testsPer.toFixed(1) + 
-            "% του πληθυσμού της χώρας.") 
-        ,
-        new KeyboardMessage(ΜΑΙΝ_KEYBOARD)
-            ])
+            new TextMessage(messages.stats(newCases,testsPer )) ,
+            new KeyboardMessage(ΜΑΙΝ_KEYBOARD)
+        ])
          .catch(err => {console.log(err)})
     });
 }

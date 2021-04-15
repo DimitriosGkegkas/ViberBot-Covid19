@@ -5,7 +5,7 @@ const TextMessage = require("viber-bot").Message.Text;
 const SMS_KEYBOARD = require('./../views/menu').SMS_KEYBOARD
 const MAIN_KEYBOARD = require('./../views/menu').MAIN_KEYBOARD
 const SAMPLE_KEYBOARD = require('./../views/menu').SAMPLE_KEYBOARD
-
+const messages = require('./../views/messages');
 
 module.exports= (message, response) => {
 
@@ -36,7 +36,7 @@ module.exports= (message, response) => {
         trData.Q = "Code"
         response
         .send([
-            new TextMessage('Πληκτρολογίστε \n"Μετακίνηση {Αριθμός 1-6}" \nή επιλέξτε τον τύπο της μετακίνησης που επιθυμείτε.'),
+            new TextMessage(messages.pickANumber),
             new KeyboardMessage(SMS_KEYBOARD)
         ],
         trData)
@@ -46,7 +46,7 @@ module.exports= (message, response) => {
         trData.Q = "Name"
         response
         .send([
-            new TextMessage('Πληκτρολογίστε το όνομα που θέλετε να χρησιμοποιήσεται. \nή επιλέξτε Ας Αρχίσουμε για να επιστρέψετε στο menu.'),
+            new TextMessage(messages.pickAName),
             new KeyboardMessage(SAMPLE_KEYBOARD)
         ],
         trData)
@@ -56,7 +56,7 @@ module.exports= (message, response) => {
         trData.Q = "Addrs"
         response
         .send([
-            new TextMessage('Παρακαλώ πληκτρολογίστε την διεύθηνση κατοικίας. \nή επιλέξτε Ας Αρχίσουμε για να επιστρέψετε στο menu.'),
+            new TextMessage(messages.pickAnAddrs),
             new KeyboardMessage(SAMPLE_KEYBOARD)
         ],
         trData)
@@ -72,7 +72,5 @@ module.exports= (message, response) => {
         ])
         .catch(err => { console.log(err) })
     }
-
-
 }
 
