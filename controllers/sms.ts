@@ -10,7 +10,7 @@ const messages = require('./../views/messages');
 module.exports= (message, response) => {
 
     const trData = message.trackingData
-    console.log(trData)
+
     switch (trData.Q){
         case ("Code"):{
             trData.NumCode = message.text.split(' ')[1]
@@ -28,8 +28,6 @@ module.exports= (message, response) => {
             break;
         }
     } 
-    console.log(trData)
-    
 
 
     if(!trData.NumCode){
