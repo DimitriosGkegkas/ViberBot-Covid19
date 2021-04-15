@@ -7,12 +7,11 @@ const greeting = require("./../controllers/greeting");
 const stats = require("./../controllers/stats");
 const map = require("./../controllers/map-restrictions");
 const main = require("./../controllers/main");
-
+const sms = require("./../controllers/sms")
 
 module.exports = (message, response) => {
    const msg = message.text
-
-   switch (msg.toLowerCase()) {
+   switch (msg.toLowerCase('gr')) {
       case "ας αρχήσουμε":{
          main(message, response)
          break;
@@ -25,7 +24,8 @@ module.exports = (message, response) => {
          stats(message, response)
          break;
       }
-      case "δ":{
+      case "μετακίνηση":{
+         sms(message, response)
          break;
       }
       case "":{
@@ -35,7 +35,12 @@ module.exports = (message, response) => {
          break;
       }
       default:{
-         greeting(message, response)
+         if (message.trackingData.Q){
+            sms(message, response)
+         }
+         else{
+            greeting(message, response)
+         }
          break;
       }
    }
