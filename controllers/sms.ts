@@ -65,6 +65,7 @@ module.exports= (message, response) => {
         let msg = "sms:13033&body="+trData.NumCode+"%20"+name+"%20"+addrs
         response
         .send([
+            new TextMessage(messages.sms),
             new TextMessage(msg) ,
             new KeyboardMessage(MAIN_KEYBOARD)
         ])
