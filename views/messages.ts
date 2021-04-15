@@ -5,10 +5,17 @@ module.exports.pickAName = 'Πληκτρολογίστε το όνομα που 
 module.exports.pickAnAddrs ='Παρακαλώ πληκτρολογίστε την διεύθηνση κατοικίας. \nή επιλέξτε Ας Αρχίσουμε για να επιστρέψετε στο menu.'
 
 
-module.exports.stats = (newCases,testsPer ) =>{
-    return "Σήμερα τα κρούσματα έχουν μεταβληθεί κατά "+newCases + 
-    " και αυτή την στιγμή έχουν λάβει τουλάχιστον μία δόση του εμβολίου το " +testsPer.toFixed(1) + 
+module.exports.stats = (newCases,testsPer ,cases ) =>{
+    let res = "Σήμερα έχουμε " +cases + " ενεργά κρούσματα"
+    if(newCases){
+        res = res + ", με "+newCases+" νέα κρούσματα.\n"
+    }
+    else{
+        res = res +".\n"
+    }
+    res = res + "Αυτή την στιγμή έχουν λάβει τουλάχιστον μία δόση του εμβολίου το " +testsPer.toFixed(1) + 
     "% του πληθυσμού της χώρας."
+    return res
 }
 
 

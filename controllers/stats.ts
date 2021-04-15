@@ -1,3 +1,5 @@
+import { Console } from "node:console";
+
 export {}
 const TextMessage = require("viber-bot").Message.Text;
 const unirest = require("unirest");
@@ -17,7 +19,7 @@ module.exports = (message, response) => {
     let currentDay =year + "-" + month + "-" + date
 
     var req = unirest("GET", "https://covid-193.p.rapidapi.com/history");
-    console.log(currentDay)
+
     req.query({
         "country": "greece",
         "day": currentDay
@@ -36,8 +38,9 @@ module.exports = (message, response) => {
         let testsPer = 100*res.body.response[0].tests["1M_pop"]/res.body.response[0].tests["total"] ;
         
         let newCases = res.body.response[0].cases.new ;
+        let cases = res.body.response[0].cases.active ;
         response.send([
-            new TextMessage(messages.stats(newCases,testsPer )) ,
+            new TextMessage(messages.stats(newCases,testsPer, cases )) ,
             new KeyboardMessage(ΜΑΙΝ_KEYBOARD)
         ])
          .catch(err => {console.log(err)})
