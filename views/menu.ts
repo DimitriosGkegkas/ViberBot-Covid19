@@ -21,30 +21,30 @@ module.exports.MAIN_KEYBOARD = {
 	"Buttons": [
 		{
 			"Columns": 2,
-			"Rows": 1,
+			"Rows": 2,
 			"BgColor": "#e6f5ff",
-            "Text":"1",
+            "Text":"Πληροφορίες",
 			"BgLoop": true,
 			"ActionType": "reply",
-			"ActionBody": "Yes"
+			"ActionBody": "Θα ήθελα πληροφορίες"
 		},
         {
 			"Columns": 2,
-			"Rows": 1,
+			"Rows": 2,
 			"BgColor": "#e6f5ff",
-            "Text":"2",
+            "Text":"Σημερινά Δεδομένα",
 			"BgLoop": true,
 			"ActionType": "reply",
-			"ActionBody": "Yes"
+			"ActionBody": "Ποια είναι η κατάσταση σήμερα"
 		},
         {
 			"Columns": 2,
-			"Rows": 1,
+			"Rows": 2,
 			"BgColor": "#e6f5ff",
-            "Text":"3",
+            "Text":"SMS Μετακίνησης",
 			"BgLoop": true,
 			"ActionType": "reply",
-			"ActionBody": "Yes"
+			"ActionBody": "Θα ήθελα να στείλω sms για μετακίνηση"
 		}
 	]
 };

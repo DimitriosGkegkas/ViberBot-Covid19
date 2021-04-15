@@ -1,6 +1,10 @@
 export {}
 const TextMessage = require("viber-bot").Message.Text;
 const unirest = require("unirest");
+const KeyboardMessage = require('viber-bot').Message.Keyboard;
+const ΜΑΙΝ_KEYBOARD = require('./../views/menu').MAIN_KEYBOARD
+
+
 
 module.exports = (message, response) => {
     
@@ -32,15 +36,18 @@ module.exports = (message, response) => {
         let testsPer = 100*res.body.response[0].tests["1M_pop"]/res.body.response[0].tests["total"] ;
         
         let newCases = res.body.response[0].cases.new ;
-        response.send(new TextMessage(
+        response.send([
+            new TextMessage(
             "Σήμερα τα κρούσματα έχουν μεταβληθεί κατά "+newCases + 
             " και αυτή την στιγμή έχουν λάβει τουλάχιστον μία δόση του εμβολίου το " +testsPer.toFixed(1) + 
             "% του πληθυσμού της χώρας.") 
-        )
+        ,
+        new KeyboardMessage(ΜΑΙΝ_KEYBOARD)
+            ])
          .catch(err => {console.log(err)})
     });
 }
 
-//http://api.ourworldindata.org/v1/data?api_key=xxxx&variables=17%2C19&entities=46%2C47&from=1678&to=1800
+
 
 
