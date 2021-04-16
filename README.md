@@ -2,6 +2,9 @@
 
 This is a Viber bot project that deals with Covid19 releated questions.
 
+<img src="img/1.png" width="200"><img src="img/2.png" width="200"><img src="img/3.png" width="200">
+<img src="img/reco1.gif" width="200"> <img src="img/reco2.gif" width="200"> <img src="img/reco3.gif" width="200">
+
 ---
 ## Requirements
 
@@ -53,7 +56,7 @@ Run
     $ ngrok http 3000
     
 You should be getting something like this 
-![ngrok](ngrok.png)
+![ngrok](img/ngrok.png)
 
 Just copy the mapped https url and paste it in "./secret/url.ts"
 
@@ -64,11 +67,9 @@ Run
 
 And now you should be able to talk with the chat bot. Just scan the QR Code below if you are using my Viber Chat Bot Account 
 
-![ngrok](QRC.png)
+![ngrok](img/QRC.png)
 
 or just change the viber token to one of yours, in the file "./secret/viber.ts.".
 
 If you want, you can create one [here](https://partners.viber.com/login?returnUrl=%2Faccount%2Fcreate-bot-account)
 
-
-![ngrok](1.mp4)

@@ -61,6 +61,7 @@ module.exports.MAIN_KEYBOARD = {
 };
 
 
+
 module.exports.SMS_KEYBOARD = {
 	"Type": "keyboard",
 	"Revision": 1,
@@ -69,74 +70,78 @@ module.exports.SMS_KEYBOARD = {
 		{
 			"Columns": 2,
 			"Rows": 1,
+			"BgMediaType" : "picture",
+			
+			"BgMedia": "https://i.ibb.co/KNVb5dk/1.jpg"
+	,
 			"BgColor": "#e6f5ff",
-            "Text":"Ιατρικά",
-			"BgLoop": true,
+            "Text":"<font  size=18><b>Ιατρικά</b></font>",
+			"BgMediaScaleType":"crop",
+
 			"ActionType": "reply",
 			"ActionBody": "μετακίνηση 1",
 			"TextVAlign":"top",
 			"TextSize": "large",
-			"Image": "https://as2.ftcdn.net/jpg/03/31/14/09/500_F_331140980_zR09EB3TtXQb2VoFtw72pZkb1unY7Nfw.jpg"
-		},
+				},
         {
 			"Columns": 2,
 			"Rows": 1,
-			"BgColor": "#e6f5ff",
-            "Text":"Ψώνια",
+            "Text":"<font  size=18><b>Ψώνια</b></font>",
 			"BgLoop": true,
+			"BgMediaScaleType":"fit",
 			"ActionType": "reply",
 			"TextVAlign":"top",
 			"TextSize": "large",
 			"ActionBody": "μετακίνηση 2",
-			"Image":"https://as2.ftcdn.net/jpg/02/25/32/51/500_F_225325173_p0ENO2Us00TqLmPpMjBW8DnLvprCFvBu.jpg"
+			"BgMedia":"https://i.ibb.co/q9Vn12k/2.jpg"
 		},
         {
 			"Columns": 2,
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
-            "Text":"Τράπεζα",
+            "Text":"<font  size=18><b>Τράπεζα</b></font>",
 			"BgLoop": true,
 			"ActionType": "reply",
 			"TextVAlign":"top",
 			"TextSize": "large",
 			"ActionBody": "μετακίνηση 3",
-			"Image":"https://as2.ftcdn.net/jpg/00/68/53/15/500_F_68531513_VSBYDeeWSx5yPIH3TxgYxonbMag3qbkC.jpg"
+			"BgMedia":"https://i.ibb.co/0tsB1VD/3.jpg"
 		},
 		{
 			"Columns": 2,
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
-            "Text":"Παροχή Βοήθειας",
+            "Text":"<font  size=18><b>Παροχή Βοήθειας</b></font>",
 			"BgLoop": true,
 			"ActionType": "reply",
 			"TextVAlign":"top",
 			"TextSize": "large",
 			"ActionBody": "μετακίνηση 4",
-			"Image" : "https://as1.ftcdn.net/jpg/03/61/69/72/500_F_361697227_CsqxnH4qrV3QvXGyjK4kVYKJ9lt9qGVs.jpg"
+			"BgMedia" : "https://i.ibb.co/HYsXz2r/4.jpg"
 		},
         {
 			"Columns": 2,
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
-            "Text":"Γονική Μετακίνηση",
+            "Text":"<font  size=18><b>Γονική Μετακίνηση</b></font>",
 			"BgLoop": true,
 			"ActionType": "reply",
 			"TextSize": "large",
 			"TextVAlign":"top",
 			"ActionBody": "μετακίνηση 5",
-			"Image" :"https://as2.ftcdn.net/jpg/03/13/55/49/500_F_313554915_HgdqOZIv4KvS1KiiDqxvl3Tx20WZTvib.jpg"
+			"BgMedia" :"https://i.ibb.co/YQPK7N7/5.jpg"
 		},
         {
 			"Columns": 2,
 			"Rows": 1,
 			"BgColor": "#e6f5ff",
-            "Text":"Σωματική Άσκηση",
+            "Text":"<font  size=18><b>Σωματική Άσκηση</b></font>",
 			"BgLoop": true,
 			"ActionType": "reply",
 			"TextVAlign":"top",
 			"TextSize": "large",
 			"ActionBody": "μετακίνηση 6",
-			"Image": "https://as2.ftcdn.net/jpg/01/19/79/05/500_F_119790502_yBYCVd6xou2fS5G3FbRCcFtku8Ijm9ya.jpg"
+			"BgMedia": "https://i.ibb.co/qjVnSLn/6.jpg"
 		}
 	]
 };
