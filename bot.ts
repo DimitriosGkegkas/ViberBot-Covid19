@@ -34,14 +34,7 @@ bot.on(BotEvents.SUBSCRIBED, response => {
     response.send(new TextMessage(`Γεία σου ${response.userProfile.name}. Είμαι το  ${bot.name} και μπορώ να σε βοηθήσω με τις καθημερινές διαδικασίες λόγο του covid19`))
     .catch(err => {console.log(err)})
 });
-bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish)  => {
-    if(isSubscribed){
-        bot.sendMessage(userProfile, [
-            new TextMessage(`Γεία σου ${userProfile.name}. Είμαι το  ${bot.name} και μπορώ να σε βοηθήσω με τις καθημερινές διαδικασίες λόγο του covid19`)
-        ])
-        .catch(err => {console.log(err)})
-    }
-});
+
 // Message
 
 // Message
