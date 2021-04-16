@@ -1,3 +1,5 @@
+import { request } from "node:http";
+
 export { }
 const KeyboardMessage = require('viber-bot').Message.Keyboard;
 const RichMediaMessage = require('viber-bot').Message.RichMedia;
@@ -5,6 +7,7 @@ const TextMessage = require("viber-bot").Message.Text;
 const SMS_KEYBOARD = require('./../views/menu').SMS_KEYBOARD
 const MAIN_KEYBOARD = require('./../views/menu').MAIN_KEYBOARD
 const SAMPLE_KEYBOARD = require('./../views/menu').SAMPLE_KEYBOARD
+const NAME_KEYBOARD = require('./../views/menu').Name;
 const messages = require('./../views/messages');
 const UrlMessage = require('viber-bot').Message.Url;
 
@@ -51,6 +54,13 @@ module.exports= (message, response) => {
             new TextMessage(messages.pickAName,SAMPLE_KEYBOARD),
         ],
         trData)
+        .then(()=>{
+            response
+            .send([
+                new RichMediaMessage(NAME_KEYBOARD(response.userProfile.name),SAMPLE_KEYBOARD, null),
+            ],
+            trData).catch(err => { console.log(err) })
+        })
         .catch(err => { console.log(err) })
     }
     else if (!trData.Addrs){

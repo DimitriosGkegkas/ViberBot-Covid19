@@ -22,6 +22,31 @@ module.exports.SAMPLE_KEYBOARD = {
 	]
 };
 
+module.exports.Name = (name) => {
+	return {
+		"Type":"rich_media",
+		"ButtonsGroupColumns":5,
+		"ButtonsGroupRows":1,
+		"BgColor":"#FFFFFF",
+		"Buttons": [
+			{
+
+				"Columns": 5,
+				"Rows": 1,
+				"Text":"<b>Χρήση <font color=”#9086DB” >"+name+"</font> ως όνομα</b>",
+
+				"ActionType": "reply",
+				"ActionBody": name,
+				"TextVAlign":"middle",
+				"TextHAlign":"middle",
+
+			}
+		]
+	}
+
+	 
+}
+
 
 module.exports.MAIN_KEYBOARD = {
 	"Type": "keyboard",
