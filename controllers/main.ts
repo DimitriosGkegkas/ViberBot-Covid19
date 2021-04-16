@@ -7,8 +7,7 @@ const messages = require('./../views/messages');
 module.exports = (message, response) => {
     response
     .send([
-        new TextMessage(messages.main),
-        new KeyboardMessage(ΜΑΙΝ_KEYBOARD)
+        new TextMessage(messages.main,ΜΑΙΝ_KEYBOARD),
     ])
     .catch(err => { console.log(err) })
 }

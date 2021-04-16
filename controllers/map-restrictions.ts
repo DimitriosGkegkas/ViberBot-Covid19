@@ -10,12 +10,15 @@ const messages = require('./../views/messages');
 
 module.exports = (message, response) => {
     response
-    .send([
-        new TextMessage(messages.news),
-        new RichMediaMessage(SAMPLE_RICH_MEDIA, null,null) ,
-        new KeyboardMessage(ΜΑΙΝ_KEYBOARD)
-    ])
+    .send(new TextMessage(messages.news,ΜΑΙΝ_KEYBOARD))
+    .then(()=>{
+        response
+        .send(new RichMediaMessage(SAMPLE_RICH_MEDIA, ΜΑΙΝ_KEYBOARD,null))
+        .catch(err => {console.log(err)})
+    })
     .catch(err => {console.log(err)})
+
+
 
 }
 

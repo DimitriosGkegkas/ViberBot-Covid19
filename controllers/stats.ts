@@ -6,6 +6,7 @@ const unirest = require("unirest");
 const KeyboardMessage = require('viber-bot').Message.Keyboard;
 const ΜΑΙΝ_KEYBOARD = require('./../views/menu').MAIN_KEYBOARD
 const messages = require('./../views/messages');
+const rapidapiKEY = require('./../secret/api')
 
 
 module.exports = (message, response) => {
@@ -19,14 +20,13 @@ module.exports = (message, response) => {
     });
     
     req.headers({
-        "x-rapidapi-key": "bd6fe504ccmsh0fab148d6fa1bf7p1b964cjsn1ea9122dfb00",
+        "x-rapidapi-key": rapidapiKEY,
         "x-rapidapi-host": "covid-193.p.rapidapi.com",
         "useQueryString": true
     });
     
     
     req.end(function (res) {
-        console.log(res.body.response)
         if (res.error) throw new Error(res.error);
         try{
             let testsPer = 100*res.body.response[0].tests["1M_pop"]/res.body.response[0].tests["total"] ;
@@ -34,15 +34,14 @@ module.exports = (message, response) => {
             let newCases = res.body.response[0].cases.new ;
             let cases = res.body.response[0].cases.active ;
             response.send([
-                new TextMessage(messages.stats(newCases,testsPer, cases )) ,
-                new KeyboardMessage(ΜΑΙΝ_KEYBOARD)
+                new TextMessage(messages.stats(newCases,testsPer, cases ),ΜΑΙΝ_KEYBOARD) ,
+
             ])
              .catch(err => {console.log(err)})
         }
         catch{
             response.send([
-                new TextMessage("Συγνώμη αλλά δεν έχω λάβει ακόμα τα δεδομένα για σήμερα.😟") ,
-                new KeyboardMessage(ΜΑΙΝ_KEYBOARD)
+                new TextMessage("Συγνώμη αλλά δεν έχω λάβει ακόμα τα δεδομένα για σήμερα.😟",ΜΑΙΝ_KEYBOARD) ,
             ])
         }
     });

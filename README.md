@@ -1,6 +1,6 @@
-# Project Title
+# Viber Bot for Covid19 
 
-A nice project with a nice description
+This is a Viber bot project that deals with Covid19 releated questions.
 
 ---
 ## Requirements
@@ -69,3 +69,6 @@ And now you should be able to talk with the chat bot. Just scan the QR Code belo
 or just change the viber token to one of yours, in the file "./secret/viber.ts.".
 
 If you want, you can create one [here](https://partners.viber.com/login?returnUrl=%2Faccount%2Fcreate-bot-account)
+
+
+![ngrok](1.mp4)

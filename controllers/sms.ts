@@ -6,6 +6,7 @@ const SMS_KEYBOARD = require('./../views/menu').SMS_KEYBOARD
 const MAIN_KEYBOARD = require('./../views/menu').MAIN_KEYBOARD
 const SAMPLE_KEYBOARD = require('./../views/menu').SAMPLE_KEYBOARD
 const messages = require('./../views/messages');
+const UrlMessage = require('viber-bot').Message.Url;
 
 module.exports= (message, response) => {
 
@@ -34,8 +35,7 @@ module.exports= (message, response) => {
         trData.Q = "Code"
         response
         .send([
-            new TextMessage(messages.pickANumber),
-            new KeyboardMessage(SMS_KEYBOARD)
+            new TextMessage(messages.pickANumber,SMS_KEYBOARD),
         ],
         trData)
         .catch(err => { console.log(err) })
@@ -44,8 +44,7 @@ module.exports= (message, response) => {
         trData.Q = "Name"
         response
         .send([
-            new TextMessage(messages.pickAName),
-            new KeyboardMessage(SAMPLE_KEYBOARD)
+            new TextMessage(messages.pickAName,SAMPLE_KEYBOARD),
         ],
         trData)
         .catch(err => { console.log(err) })
@@ -54,8 +53,7 @@ module.exports= (message, response) => {
         trData.Q = "Addrs"
         response
         .send([
-            new TextMessage(messages.pickAnAddrs),
-            new KeyboardMessage(SAMPLE_KEYBOARD)
+            new TextMessage(messages.pickAnAddrs,SAMPLE_KEYBOARD),
         ],
         trData)
         .catch(err => { console.log(err) })
@@ -65,9 +63,8 @@ module.exports= (message, response) => {
         let msg = "sms:13033&body="+trData.NumCode+"%20"+name+"%20"+addrs
         response
         .send([
-            new TextMessage(messages.sms),
-            new TextMessage(msg) ,
-            new KeyboardMessage(MAIN_KEYBOARD)
+            new TextMessage(messages.sms,MAIN_KEYBOARD),
+            new TextMessage(msg,MAIN_KEYBOARD),
         ])
         .catch(err => { console.log(err) })
     }
