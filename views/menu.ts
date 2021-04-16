@@ -7,10 +7,10 @@ module.exports.SAMPLE_KEYBOARD = {
 
 			"Columns": 6,
 			"Rows": 1,
-            "Text":"<font color=”#9086DB” size=28><b>Ας Αρχήσουμε</b></font>",
+            "Text":"<font color=”#9086DB” size=28><b>Ας Αρχίσουμε</b></font>",
 			"BgLoop": true,
 			"ActionType": "reply",
-			"ActionBody": "Ας Αρχήσουμε",
+			"ActionBody": "Ας Αρχίσουμε",
 			"TextVAlign":"middle",
 			"TextHAlign":"middle",
 

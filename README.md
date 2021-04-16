@@ -55,9 +55,17 @@ Run
 You should be getting something like this 
 ![ngrok](ngrok.png)
 
-Just copy the mapped https url and paste it in "./secret/url/ts"
+Just copy the mapped https url and paste it in "./secret/url.ts"
 
 ## Running the project
+Run
 
     $ npm start
 
+And now you should be able to talk with the chat bot. Just scan the QR Code below if you are using my Viber Chat Bot Account 
+
+![ngrok](QRC.png)
+
+or just change the viber token to one of yours, in the file "./secret/viber.ts.".
+
+If you want, you can create one [here](https://partners.viber.com/login?returnUrl=%2Faccount%2Fcreate-bot-account)

@@ -33,21 +33,18 @@ bot.on(BotEvents.SUBSCRIBED, response => {
     response.send(new TextMessage(`Γεία σου ${response.userProfile.name}. Είμαι το  ${bot.name} και μπορώ να σε βοηθήσω με τις καθημερινές διαδικασίες λόγο του covid19`));
 });
 
-
+// Message
 
 // Message
 bot.on(BotEvents.MESSAGE_RECEIVED, route);
-
-
 
 const port = process.env.PORT || 3000;
 app.use("/viber/webhook", bot.middleware());
 app.listen(port, () => {
     console.log(`Application running on port: ${port}`);
-    bot.setWebhook(`${EXPOSE_URL}/viber/webhook`).catch(error => {
+    bot.setWebhook(`${EXPOSE_URL}/viber/webhook`,).catch(error => {
         console.log('Can not set webhook on following server. Is it running?');
         console.error(error);
-        process.exit(1);
     });
 });
 

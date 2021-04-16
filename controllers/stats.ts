@@ -9,20 +9,13 @@ const messages = require('./../views/messages');
 
 
 module.exports = (message, response) => {
-    
-    // get current day
-    let ts = Date.now();
-    let date_ob = new Date(ts);
-    let date = date_ob.getDate().toLocaleString('en-US', { minimumIntegerDigits: 2,useGrouping: false });
-    let month = (date_ob.getMonth() + 1).toLocaleString('en-US', { minimumIntegerDigits: 2,useGrouping: false });
-    let year = date_ob.getFullYear();
-    let currentDay =year + "-" + month + "-" + date
 
-    var req = unirest("GET", "https://covid-193.p.rapidapi.com/history");
+
+
+    var req = unirest("GET", "https://covid-193.p.rapidapi.com/statistics");
 
     req.query({
         "country": "greece",
-        "day": currentDay
     });
     
     req.headers({
@@ -33,17 +26,25 @@ module.exports = (message, response) => {
     
     
     req.end(function (res) {
+        console.log(res.body.response)
         if (res.error) throw new Error(res.error);
-    
-        let testsPer = 100*res.body.response[0].tests["1M_pop"]/res.body.response[0].tests["total"] ;
-        
-        let newCases = res.body.response[0].cases.new ;
-        let cases = res.body.response[0].cases.active ;
-        response.send([
-            new TextMessage(messages.stats(newCases,testsPer, cases )) ,
-            new KeyboardMessage(ΜΑΙΝ_KEYBOARD)
-        ])
-         .catch(err => {console.log(err)})
+        try{
+            let testsPer = 100*res.body.response[0].tests["1M_pop"]/res.body.response[0].tests["total"] ;
+            
+            let newCases = res.body.response[0].cases.new ;
+            let cases = res.body.response[0].cases.active ;
+            response.send([
+                new TextMessage(messages.stats(newCases,testsPer, cases )) ,
+                new KeyboardMessage(ΜΑΙΝ_KEYBOARD)
+            ])
+             .catch(err => {console.log(err)})
+        }
+        catch{
+            response.send([
+                new TextMessage("Συγνώμη αλλά δεν έχω λάβει ακόμα τα δεδομένα για σήμερα.😟") ,
+                new KeyboardMessage(ΜΑΙΝ_KEYBOARD)
+            ])
+        }
     });
 }
 
