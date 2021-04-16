@@ -39,6 +39,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
     $ git clone https://github.com/DimitriosGkegkas/ViberBot-Covid19.git
     $ cd ViberBot-Covid19
     $ npm install
+    $ npm install ngrok -g --save
 
 ## Configure ngrok
 
