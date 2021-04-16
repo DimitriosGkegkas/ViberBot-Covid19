@@ -2,9 +2,9 @@
 
 This is a Viber bot project that deals with Covid19 releated questions.
 
-<img src="img/1.png" width="200"><img src="img/2.png" width="200"><img src="img/3.png" width="200">
+<img src="img/1.png" width="250"><img src="img/2.png" width="250"><img src="img/3.png" width="250">
 <br>
-<img src="img/reco1.gif" width="200"> <img src="img/reco2.gif" width="200"> <img src="img/reco3.gif" width="200">
+<img src="img/reco1.gif" width="250"> <img src="img/reco2.gif" width="250"> <img src="img/reco3.gif" width="250">
 
 ---
 ## Requirements
