@@ -45,8 +45,8 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ## Install
 
-    $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
-    $ cd PROJECT_TITLE
+    $ git clone https://github.com/DimitriosGkegkas/ViberBot-Covid19.git
+    $ cd ViberBot-Covid19
     $ npm install
 
 ## Configure ngrok
@@ -59,9 +59,10 @@ You should be getting something like this
 ![ngrok](img/ngrok.png)
 
 Just copy the mapped https url and paste it in "./secret/url.ts"
+Do not close this terminal.
 
 ## Running the project
-Run
+In a new terminal Run
 
     $ npm start
 
