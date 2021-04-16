@@ -1,3 +1,6 @@
+// All the menus and keyboards used.
+// Easy change of the app look and feel by just chaning this file.
+
 module.exports.SAMPLE_KEYBOARD = {
 	"Type": "keyboard",
 	"InputFieldState":"regular",

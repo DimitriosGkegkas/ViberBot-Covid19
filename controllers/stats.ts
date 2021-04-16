@@ -8,24 +8,20 @@ const ΜΑΙΝ_KEYBOARD = require('./../views/menu').MAIN_KEYBOARD
 const messages = require('./../views/messages');
 const rapidapiKEY = require('./../secret/api')
 
-
+// A controller that response with Data about Covid19
 module.exports = (message, response) => {
-
-
-
+    // use of a public API to get updated data.
     var req = unirest("GET", "https://covid-193.p.rapidapi.com/statistics");
-
     req.query({
         "country": "greece",
     });
-    
     req.headers({
         "x-rapidapi-key": rapidapiKEY,
         "x-rapidapi-host": "covid-193.p.rapidapi.com",
         "useQueryString": true
     });
     
-    
+    // presenting info 
     req.end(function (res) {
         if (res.error) throw new Error(res.error);
         try{

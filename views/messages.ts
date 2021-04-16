@@ -1,3 +1,6 @@
+// All the writen messages that can be send to the user.
+// Easy change of dialogs and mistake fix.
+
 module.exports.pickANumber = '⌨️Πληκτρολογίστε \nΜετακίνηση ΚΕΝΟ και τον κωδικό μετακίνησης \n🖱️ ή επιλέξτε τον τύπο της μετακίνησης που επιθυμείτε.'
 
 module.exports.pickAName = '⌨️👀Τι όναμα να χρησιμοποιήσω; \nΠληκτρολογίστε ή επιλέξτε Ας Αρχίσουμε για να επιστρέψετε στο menu.'

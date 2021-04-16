@@ -8,10 +8,14 @@ const SAMPLE_KEYBOARD = require('./../views/menu').SAMPLE_KEYBOARD
 const messages = require('./../views/messages');
 const UrlMessage = require('viber-bot').Message.Url;
 
+
+// A controller that deals with the SMS related tasks. 
 module.exports= (message, response) => {
 
     const trData = message.trackingData
 
+    // trData.Q has the last question asked in order to proper store the user's Answer 
+    // Everything is stored in trData that is passed as tracking data in order to complite the conversation
     switch (trData.Q){
         case ("Code"):{
             trData.NumCode = message.text.split(' ')[1]

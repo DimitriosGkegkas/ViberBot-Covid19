@@ -1,3 +1,6 @@
+// The news and info carousel
+
+
 const sites_data = require('./../model/news')
 
 let SAMPLE_RICH_MEDIA =

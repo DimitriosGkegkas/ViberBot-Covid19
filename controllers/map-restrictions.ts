@@ -8,6 +8,8 @@ const SAMPLE_RICH_MEDIA = require('./../views/news').SAMPLE_RICH_MEDIA
 const TextMessage = require("viber-bot").Message.Text;
 const messages = require('./../views/messages');
 
+
+// A controller that response with the proper Info Sites to the user
 module.exports = (message, response) => {
     response
     .send(new TextMessage(messages.news,ΜΑΙΝ_KEYBOARD))

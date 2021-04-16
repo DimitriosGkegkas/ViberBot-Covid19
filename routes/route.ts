@@ -11,6 +11,9 @@ const sms = require("./../controllers/sms")
 const ΜΑΙΝ_KEYBOARD = require('./../views/menu').MAIN_KEYBOARD
 const TextMessage = require("viber-bot").Message.Text;
 
+
+
+// Every message is redirected to the appropriate controller throw here.
 module.exports = (message, response) => {
    const msg = message.text
    switch (msg.toLowerCase('gr')) {
